@@ -10,7 +10,7 @@ import com.sola.instagram.util.UriConstructor;
 
 
 public class User extends InstagramModel {
-	protected int id;
+	protected long id;
 	protected String userName;
 	protected String fullName;
 	protected String profilePictureURI;
@@ -22,7 +22,7 @@ public class User extends InstagramModel {
 
 	public User(JSONObject obj, String accessToken) throws JSONException {
 		super(obj, accessToken);
-		setId(obj.getInt("id"));
+		setId(obj.getLong("id"));
 		setUserName(obj.getString("username"));
 		setFullName(obj.getString("full_name"));
 		setProfilePictureURI(obj.getString("profile_picture"));
@@ -42,11 +42,11 @@ public class User extends InstagramModel {
 		}
 	}
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 	
-	protected void setId(int id) {
+	protected void setId(long id) {
 		this.id = id;
 	}
 	

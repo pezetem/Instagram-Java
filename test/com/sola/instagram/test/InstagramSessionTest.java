@@ -1,5 +1,6 @@
 package com.sola.instagram.test;
 
+import java.util.List;
 import java.util.Random;
 
 import com.sola.instagram.InstagramSession;
@@ -28,7 +29,7 @@ public class InstagramSessionTest {
 		 * Test that no Exception is thrown for a valid user id
 		 */
 		getNewSession().getUserById(Constants.VALID_USER_ID);
-	} 
+	}
  
 	@Test
 	public void testGetRecentPublishedMedia() throws Exception {
@@ -244,4 +245,13 @@ public class InstagramSessionTest {
 		}
 	}
 
+    @Test
+    public void testSearchUserWithHighId() throws Exception {
+        /*
+		 * Test that no Exception is thrown for a high user id
+		 */
+        String instagramAccout = "aelfie_";
+
+        List<User> users = getNewSession().searchUsersByName(instagramAccout);
+    }
 }
